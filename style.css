@@ -56,3 +56,10 @@ p {
     background: #333;
     transform: translateX(-50%);
 }
+
+.logo {
+    display: block;
+    margin: 0 auto 20px;
+    transform: rotate(41deg);
+    height: 250px;
+}
