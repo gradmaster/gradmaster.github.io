@@ -1,17 +1,244 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Under Construction</title>
-    <link rel="stylesheet" href="style.css">
+    <title>GradMaster</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>GradMaster Welcomes You!</h1>
-        <img src="logo.png" alt="GradMaster Logo" class="logo">
-        <p>Site Under Construction</p>
-        <p>We're working hard to improve our website and we'll be ready to launch soon. Stay tuned!</p>
+
+    <img src="WebPage/logo2.png" class="logo" alt="">
+    <section class="hero-section text-white py-5">
+
+        <nav class="navbar navbar-expand-sm">
+            <div class="container-fluid">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item start-btn" style="display: none;">
+                    <a class="nav-link" href="#">Start Learning</a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+
+        <button type="button" class="learn-btn" style="display: none;">Start Learning</button>
+        <button title="menu" type="button" class="mobile-menu-btn" onclick="side_menu()"><i class="fa fa-bars"></i></button>
+        
+        <div class="side-menu">
+            <ul>
+                <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+                <li><a href="#"><i class="fa fa-desktop"></i>Services</a></li>
+                <li><a href="#"><i class="fa fa-phone"></i>Contact</a></li>
+                <li><a href="#"><i class="fa fa-info"></i>About</a></li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card bg-light text-dark p-4 details">
+                        <h3>Book your Slot Now</h3>
+                        <p>We will connect you back</p>
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="WhatsApp Number" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Country of University" required>
+                            </div>
+                            <div class="mb-3">
+                                <select title="category" name="Category" class="form-control" required>
+                                    <option selected disabled hidden>Topic Category</option>
+                                    <option>Cyber Security</option>
+                                    <option>Machine Learning</option>
+                                    <option>Artificial Intelligence</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-danger w-100">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center d-flex align-items-center justify-content-center">
+                    <div class="left__p">
+                        <p class="text-light">50+ Students Graduated Worldwide<br>Over 5+ Top Universities</p>
+                    </div>
+                        <img src="WebPage/images/happy-student-with-graduation-hat-diploma-grey-removebg.png" alt="Graduation" class="img-fluid girl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section py-5">
+        <div class="container">
+            <h3 class="text-center mb-4">Our Services</h3>
+            <div class="row text-center d-flex">
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <img src="WebPage/images/pers-guid.svg" alt="Guidance" class="img-fluid mb-3">
+                        <h5>Personalized Academic Guidance</h5>
+                        <p>One-on-one support to navigate their academic journey, ensuring they select the right courses and stay on track for graduation.</p>
+                        <a href="#" class="btn btn-link">Learn more</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <img src="WebPage/images/acad.svg" alt="Resources" class="img-fluid mb-3">
+                        <h5>Academic Resources</h5>
+                        <p>GradMaster offers a comprehensive library of study materials, online courses, and exam preparation tools to help students excel in their studies.</p>
+                        <a href="#" class="btn btn-link">Learn more</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <img src="WebPage/images/support.svg" alt="Support" class="img-fluid mb-3">
+                        <h5>Student Support</h5>
+                        <p>Provides 24/7 access to expert assistance, ensuring their doubts are cleared at any time, day or night.</p>
+                        <a href="#" class="btn btn-link">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="statistics-section text-white py-5">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-2">
+                    <h3>56</h3>
+                    <p>Students</p>
+                </div>
+                <div class="col-md-2">
+                    <h3>56</h3>
+                    <p>Topics</p>
+                </div>
+                <div class="col-md-2">
+                    <h3>5</h3>
+                    <p>Universities</p>
+                </div>
+                <div class="col-md-2">
+                    <h3>3</h3>
+                    <p>Countries Abroad</p>
+                </div>
+                <div class="col-md-2">
+                    <h3>25</h3>
+                    <p>In Progress</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quotes-section py-5">
+        <div class="container">
+            <h4>WHAT OUR HAPPY STUDENTS SAY</h4>
+            <div class="quote-container row d-flex">
+                <img class="quote-img col flex-grow-1" alt="quote" src="WebPage/images/double-quote-serif-right-xxl.png">
+                <div class="quote text-left col flex-grow-4">
+                    <h5>“As an international student, I was overwhelmed by the complexity of cybersecurity topics, but GradMaster’s personalized guidance changed everything for me. Their patient, step-by-step approach helped me understand even the most challenging concepts with ease. I felt supported every step of the way, and my confidence grew with each session. GradMaster didn’t just help me pass my exams—they ignited my passion for cybersecurity. I’m truly grateful for their unwavering support and dedication.”
+                    </h5>
+                    <div class="quote-details main-quote-detail">
+                        <h6>Cyber Security</h6>
+                        <p>Scored 90+</p>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <p>
+                        “Balancing a part-time job with my studies was incredibly tough, and there were nights when I felt like giving up. But knowing that GradMaster’s support was always just a click away made all the difference. Their 24/7 availability meant that I could get help with my assignments and doubts, no matter how late it was. This level of support was something I never expected, and it made me feel like I wasn’t alone in this journey. GradMaster truly cares about their students’ success, and I couldn’t have made it without them.”
+                    </p>
+                    <div class="quote-details sub-quote-detail">
+                        <h6>Machine Learning</h6>
+                        <p>Scored 85+</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <p>
+                        “GradMaster stepped in at the perfect moment, offering expert guidance that simplified everything of my academics. They walked me through each step, reassured me when I was anxious, and ensured all my documents were perfectly in order. Thanks to them, I’m now living my dream, studying cybersecurity in a new country, and building a future I never thought possible. GradMaster wasn’t just a service—they became my lifeline.”
+                    </p>
+                    <div class="quote-details sub-quote-detail">
+                        <h6>Cyber Security</h6>
+                        <p>Scored 80</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-divider">
+        <img id="bg-divider" alt="bg3" src="WebPage/images/bg3.svg">
     </div>
+
+    <section class="details-section py-5">
+        <div class="container">
+            <h2 class="text-dark text-center">Let See How it Works</h2>
+            <p class="text-center">GradMaster is there with you from the start till your success</p>
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <img src="WebPage/images/one.svg" alt="one">
+                    <h4>Initial<br>Consultation</h4>
+                    <p>Discuss goals and challenges</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="WebPage/images/two.svg" alt="two">
+                    <h4>Personalized<br>Plan</h4>
+                    <p>Develop a tailored study<br>and support plan</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="WebPage/images/three.svg" alt="three">
+                    <h4>Continuous<br>Support</h4>
+                    <p>Ongoing guidance throughout<br>academic journey</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="WebPage/images/four.svg" alt="four">
+                    <h4>Graduation &<br>Beyond</h4>
+                    <p>Celebrate success and prepare<br>for the next step</p>
+                </div>
+            </div>
+            <img id="boys" src="WebPage/images/2848729_414341-PDTRRV-886.jpg" alt="boys">
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer">
+            <img class="logo2" src="WebPage/logo2.png" alt="logo">
+            <a href="#"><img class="insta" src="WebPage/images/insta.svg" alt="instagram"></a>
+            <a href="#"><img class="linked" src="WebPage/images/linked.svg" alt="linkedin"></a>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function side_menu(){
+            document.querySelector(".side-menu").classList.toggle("active");
+            document.querySelector(".mobile-menu-btn").classList.toggle("active")
+            document.querySelector(".mobile-menu-btn i").classList.toggle("fa-bars");
+            document.querySelector(".mobile-menu-btn i").classList.toggle("fa-close");
+        }
+        
+    </script>
 </body>
 </html>
