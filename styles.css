@@ -124,6 +124,10 @@ html, body {
 .fa-close{
     padding:3px;
 }
+.loading {
+    height: 30px;
+    overflow: hidden;
+}
 
 .hero-section {
     background-image: url('WebPage/images/bg.svg');

@@ -49,12 +49,13 @@
         </div>
 
         <div class="container">
+            
             <div class="row">
                 <div class="col-md-6">
                     <div class="card bg-light text-dark p-4 details">
                         <h3>Book your Slot Now</h3>
                         <p>We will connect you back</p>
-                        <form id="bookingForm">
+                        <form id="bookingForm" autocomplete="off" >
                             <div class="mb-3">
                                 <input type="text" name="name" class="form-control" placeholder="Name" required>
                             </div>
@@ -62,10 +63,10 @@
                                 <input type="email" name="email" class="form-control" placeholder="Email" required>
                             </div>
                             <div class="mb-3">
-                                <input type="text" name="whatsapp" class="form-control" placeholder="WhatsApp Number (with Country Code)" required>
+                                <input type="text" autocomplete="false" readonly onfocus="this.removeAttribute('readonly');" name="whatsapp" class="form-control" placeholder="WhatsApp Number (with Country Code)" required>
                             </div>
                             <div class="mb-3">
-                                <input type="text" name="country" class="form-control" placeholder="Country of University" required>
+                                <input autocomplete="false" readonly onfocus="this.removeAttribute('readonly');" type="text" name="country" class="form-control" placeholder="University Location" required>
                             </div>
                             <div class="mb-3">
                                 <select title="category" name="category" class="form-control" required>
@@ -76,7 +77,10 @@
                                     <option>Other</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-danger w-100">Book Now</button>
+                            <input type="hidden" name="referral" id="referral"> <!-- Hidden field for referral -->
+
+
+                            <button type="submit" id="button" class="btn btn-danger w-100"></button>
                         </form>
                     </div>
                 </div>
@@ -239,19 +243,41 @@
             document.querySelector(".mobile-menu-btn i").classList.toggle("fa-close");
         }
 
+        function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+        }
+
+   
+        const referral = getQueryParam('ref');
+
+        document.getElementById('button').innerHTML = 'Submit Now';
+        // document.getElementById('button').innerHTML = '<img class="loading" src="WebPage/images/loading.gif" alt="Loading...">';
+        
+        // Set the referral value in the hidden input field
+        if(referral) {
+            document.getElementById('referral').value = referral;
+        }
+
+
         document.getElementById('bookingForm').addEventListener('submit', function(e) {
         e.preventDefault();
+        document.getElementById('button').innerHTML = '<img class="loading" src="WebPage/images/loading.gif" alt="Loading...">';
         
         const formData = new FormData(this);
         console.log(formData)
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxpjjxXg3KtGgmwE10MwfK_Rr5susP4jTRyLhCkZQvQ5jCGTRc8w1EN_dsbjHaJWF8/exec'; // Replace with your Google Apps Script URL
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwAGi6JIxPG4APL4zNYWMAi41cmVhqrJnhF4u71gL1pHBiyBEtlQ05D5x0NbCrGM7Y/exec'; // Replace with your Google Apps Script URL
 
         fetch(scriptURL, { method: 'POST', body: formData, mode: 'no-cors' })
             .then(response => {
                 alert('Form submitted successfully');
                 this.reset(); // Optionally reset the form after submission
+                document.getElementById('button').innerHTML = 'Submit Now';
             })
-            .catch(error => alert('Error!', error.message));
+            .catch(error =>{
+                alert('Error!', error.message)
+                document.getElementById('button').innerHTML = '<img class="loading" src="WebPage/images/loading.gif" alt="Loading...">';
+            });
         });
         
     </script>
