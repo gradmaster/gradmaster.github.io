@@ -66,10 +66,10 @@
                                 <input type="text" autocomplete="false" readonly onfocus="this.removeAttribute('readonly');" name="whatsapp" class="form-control" placeholder="WhatsApp Number (with Country Code)" required>
                             </div>
                             <div class="mb-3">
-                                <input autocomplete="false" readonly onfocus="this.removeAttribute('readonly');" type="text" name="country" class="form-control" placeholder="University Location" required>
+                                <input autocomplete="false" readonly onfocus="this.removeAttribute('readonly');" type="text" name="country" class="form-control" placeholder="University Name" required>
                             </div>
                             <div class="mb-3">
-                                <select title="category" name="category" class="form-control" required>
+                                <select title="category" name="category" id="categorySelect" class="form-control" required>
                                     <option selected disabled hidden>Topic Category</option>
                                     <option>Cyber Security</option>
                                     <option>Machine Learning</option>
@@ -77,6 +77,10 @@
                                     <option>Other</option>
                                 </select>
                             </div>
+                            <div class="mb-3" id="otherCategoryField" style="display: none;">
+                                <input type="text" name="other_category" class="form-control" placeholder="Please specify the topic" autocomplete="off">
+                            </div>
+
                             <input type="hidden" name="referral" id="referral"> <!-- Hidden field for referral -->
 
 
@@ -248,6 +252,15 @@
         return urlParams.get(param);
         }
 
+        document.getElementById('categorySelect').addEventListener('change', function() {
+        var otherCategoryField = document.getElementById('otherCategoryField');
+        if (this.value === 'Other') {
+            otherCategoryField.style.display = 'block';
+        } else {
+            otherCategoryField.style.display = 'none';
+        }
+        });
+
    
         const referral = getQueryParam('ref');
 
@@ -266,7 +279,7 @@
         
         const formData = new FormData(this);
         console.log(formData)
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwAGi6JIxPG4APL4zNYWMAi41cmVhqrJnhF4u71gL1pHBiyBEtlQ05D5x0NbCrGM7Y/exec'; // Replace with your Google Apps Script URL
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzqVJbhkVfRIDNbN02CnfhOBBZ_FtdH_auY6prR7JsE4bNrESOX0TIbPu6T7u4uLuo/exec'; // Replace with your Google Apps Script URL
 
         fetch(scriptURL, { method: 'POST', body: formData, mode: 'no-cors' })
             .then(response => {
