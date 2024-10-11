@@ -449,6 +449,13 @@ footer{
     color: black;                /* Change text color on hover */
 }
 
+.container h1 {
+     font-size: large;
+}
+.containerr h1 {
+     font-size: x-large;
+}
+
 
 @media (max-width: 768px) {
     .side-menu{
